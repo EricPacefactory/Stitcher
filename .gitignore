@@ -1,0 +1,6 @@
+# Caching stuff
+*.pyc
+__pycache__
+
+# Local storage info
+.history.json
