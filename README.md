@@ -10,7 +10,7 @@ The cli version of this tool relies on a program called [ranger](https://github.
 
 `sudo apt install ranger`
 
-The gui version of this tool relies on [tkinter]([TkInter - Python Wiki](https://wiki.python.org/moin/TkInter)). On Ubuntu, this can be installed as follows:
+The gui version of this tool relies on [tkinter](https://wiki.python.org/moin/TkInter). On Ubuntu, this can be installed as follows:
 
 `sudo apt install python3-tk`
 
