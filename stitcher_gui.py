@@ -17,8 +17,8 @@ import argparse
 
 import datetime as dt
 
+from platform import uname
 from collections import Counter
-
 from tempfile import TemporaryDirectory
 
 from local.eolib.utils.files import get_file_list
@@ -53,7 +53,12 @@ def captured_subprocess(run_command_list):
 
 def check_req_installs():
     
-    ffmpeg_check = captured_subprocess(["which", "ffmpeg"])
+    # Make sure we use the right 'check for program' command
+    system_type = uname().system
+    system_is_windows = ("windows" in system_type.lower())
+    check_cmd = "where" if system_is_windows else "which"
+    
+    ffmpeg_check = captured_subprocess([check_cmd, "ffmpeg"])
     
     if ffmpeg_check.returncode != 0:
         print("",
